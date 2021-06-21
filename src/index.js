@@ -8,7 +8,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:8080/graphql"
+  uri: "small-night.grpc.us-east-1.aws.cloud.dgraph.io:443"
 });
 
 ReactDOM.render(
