@@ -6,7 +6,8 @@ import { GET_FIRST_FIVE_USERS } from "./gql/query"
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Link
 } from "react-router-dom";
 // import SigninPage from "./pages/signin";
 // import SignupPage from "./pages/signup";
@@ -23,17 +24,33 @@ function App() {
 
     return (
         <Router>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/signin">Sign in</Link>
+                        </li>
+                        <li>
+                            <Link to="/album">Album</Link>
+                        </li>
+                    </ul>
+                </nav>
             <Switch>
                 <Route path='/signin'>
                     <SignInSide/>
                 </Route>
-                <Route path='/main'>
-                    <Dashboard/>
-                </Route>
                 <Route path='/album'>
                     <Album/>
                 </Route>
+                <Route path='/'>
+                    <Dashboard/>
+                </Route>
+
             </Switch>
+            </div>
         </Router>
     );
 }
